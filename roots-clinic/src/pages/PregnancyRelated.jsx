@@ -42,11 +42,14 @@ const PregnancyRelated = () => {
 
   return (
     <div>
+
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-teal-700 to-teal-600 text-white py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Pregnancy Related Videos</h1>
-          <p className="text-xl text-teal-100">
+      <section className="bg-gradient-to-r from-pink-700 to-pink-600 text-white py-16">
+        <div className="max-w-7xl mx-auto px-4 text-center">
+          <h1 className="text-4xl md:text-5xl font-bold mb-4">
+            Pregnancy Related Videos
+          </h1>
+          <p className="text-xl text-pink-100">
             Expert guidance for your pregnancy journey
           </p>
         </div>
@@ -54,32 +57,30 @@ const PregnancyRelated = () => {
 
       {/* Video Gallery */}
       <section className="py-16">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4">
           <p className="text-center text-gray-600 mb-12 max-w-3xl mx-auto">
-            Watch our comprehensive video series covering all aspects of pregnancy, from conception to postpartum care. Dr. Ambily Jose shares expert insights and practical advice for expectant mothers.
+            Watch our comprehensive video series covering all aspects of pregnancy,
+            from conception to postpartum care.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {videos.map((video) => (
               <div key={video.id} className="bg-white rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition">
-                <div className="relative bg-gray-200 h-48 flex items-center justify-center">
+                <div className="relative bg-gray-200 h-48">
                   <img 
                     src={video.thumbnail}
                     alt={video.title}
                     className="w-full h-full object-cover"
-                    onError={(e) => {
-                      e.target.style.display = 'none';
-                      e.target.parentElement.innerHTML = '<svg class="w-16 h-16 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>';
-                    }}
                   />
                   <div className="absolute inset-0 flex items-center justify-center">
-                    <div className="w-16 h-16 bg-white bg-opacity-90 rounded-full flex items-center justify-center">
-                      <svg className="w-8 h-8 text-teal-600" fill="currentColor" viewBox="0 0 20 20">
+                    <div className="w-16 h-16 bg-white/90 rounded-full flex items-center justify-center">
+                      <svg className="w-8 h-8 text-pink-600" fill="currentColor" viewBox="0 0 20 20">
                         <path d="M6.3 2.841A1.5 1.5 0 004 4.11V15.89a1.5 1.5 0 002.3 1.269l9.344-5.89a1.5 1.5 0 000-2.538L6.3 2.84z"/>
                       </svg>
                     </div>
                   </div>
                 </div>
+
                 <div className="p-6">
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
                     {video.title}
@@ -95,24 +96,27 @@ const PregnancyRelated = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <section className="py-16 bg-pink-50">
+        <div className="max-w-7xl mx-auto px-4 text-center">
           <h3 className="text-2xl md:text-3xl font-bold text-gray-900 mb-6">
             Have More Questions?
           </h3>
+
           <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
-            Schedule a consultation for personalized guidance throughout your pregnancy
+            Schedule a consultation for personalized guidance throughout your pregnancy.
           </p>
+
           <a 
             href="https://rootsclinics.com/" 
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-teal-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-teal-700 transition inline-block"
+            className="bg-pink-600 text-white px-8 py-3 rounded-full font-semibold hover:bg-pink-700 transition inline-block"
           >
             Book Consultation
           </a>
         </div>
       </section>
+
     </div>
   );
 };

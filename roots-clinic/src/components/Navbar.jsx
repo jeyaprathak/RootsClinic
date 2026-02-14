@@ -6,27 +6,27 @@ const Navbar = () => {
   const [showVideoDropdown, setShowVideoDropdown] = useState(false);
 
   return (
-    <nav className="bg-teal-700 text-white sticky top-0 z-50 shadow-lg">
+    <nav className="bg-gradient-to-r from-pink-700 to-pink-600 text-white sticky top-0 z-50 shadow-lg">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
+          
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <img 
               src="/logo-white.png" 
               alt="Roots Clinic" 
               className="h-16 w-auto"
-              onError={(e) => {
-                e.target.src = 'data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="60"><text x="10" y="40" font-family="Arial" font-size="24" fill="white">Roots Clinic</text></svg>';
-              }}
             />
           </Link>
 
           {/* Desktop Menu */}
           <div className="hidden md:flex items-center space-x-8">
-            <Link to="/" className="hover:text-teal-200 transition">
+            
+            <Link to="/" className="hover:text-pink-200 transition">
               Home
             </Link>
-            <Link to="/about" className="hover:text-teal-200 transition">
+
+            <Link to="/about" className="hover:text-pink-200 transition">
               About
             </Link>
             
@@ -36,7 +36,7 @@ const Navbar = () => {
               onMouseEnter={() => setShowVideoDropdown(true)}
               onMouseLeave={() => setShowVideoDropdown(false)}
             >
-              <button className="hover:text-teal-200 transition flex items-center">
+              <button className="hover:text-pink-200 transition flex items-center">
                 Video Gallery
                 <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
@@ -47,19 +47,19 @@ const Navbar = () => {
                 <div className="absolute top-full left-0 mt-2 w-56 bg-white text-gray-800 rounded-lg shadow-xl py-2">
                   <Link 
                     to="/pregnancy-related" 
-                    className="block px-4 py-2 hover:bg-teal-50 transition"
+                    className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600 transition"
                   >
                     Pregnancy Related
                   </Link>
                   <Link 
                     to="/fertility-issues" 
-                    className="block px-4 py-2 hover:bg-teal-50 transition"
+                    className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600 transition"
                   >
                     Fertility Issues
                   </Link>
                   <Link 
                     to="/general-gynecologic" 
-                    className="block px-4 py-2 hover:bg-teal-50 transition"
+                    className="block px-4 py-2 hover:bg-pink-50 hover:text-pink-600 transition"
                   >
                     General Gynecologic Queries
                   </Link>
@@ -71,19 +71,21 @@ const Navbar = () => {
               href="https://rootsclinics.com/" 
               target="_blank" 
               rel="noopener noreferrer"
-              className="hover:text-teal-200 transition"
+              className="hover:text-pink-200 transition"
             >
               Online Consultation
             </a>
-            <Link to="/contact" className="hover:text-teal-200 transition">
+
+            <Link to="/contact" className="hover:text-pink-200 transition">
               Contact
             </Link>
+
           </div>
 
           {/* Mobile menu button */}
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className="md:hidden p-2 rounded-md hover:bg-teal-600"
+            className="md:hidden p-2 rounded-md hover:bg-pink-600 transition"
           >
             <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               {isOpen ? (
@@ -93,41 +95,77 @@ const Navbar = () => {
               )}
             </svg>
           </button>
+
         </div>
       </div>
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="md:hidden bg-teal-800 px-4 pt-2 pb-4 space-y-2">
-          <Link to="/" className="block py-2 hover:text-teal-200" onClick={() => setIsOpen(false)}>
+        <div className="md:hidden bg-pink-800 px-4 pt-2 pb-4 space-y-2">
+
+          <Link 
+            to="/" 
+            className="block py-2 hover:text-pink-200 transition"
+            onClick={() => setIsOpen(false)}
+          >
             Home
           </Link>
-          <Link to="/about" className="block py-2 hover:text-teal-200" onClick={() => setIsOpen(false)}>
+
+          <Link 
+            to="/about" 
+            className="block py-2 hover:text-pink-200 transition"
+            onClick={() => setIsOpen(false)}
+          >
             About
           </Link>
+
           <div className="py-2">
-            <p className="font-semibold mb-2">Video Gallery</p>
-            <Link to="/pregnancy-related" className="block py-2 pl-4 hover:text-teal-200" onClick={() => setIsOpen(false)}>
+            <p className="font-semibold mb-2 text-pink-200">
+              Video Gallery
+            </p>
+
+            <Link 
+              to="/pregnancy-related" 
+              className="block py-2 pl-4 hover:text-pink-200 transition"
+              onClick={() => setIsOpen(false)}
+            >
               Pregnancy Related
             </Link>
-            <Link to="/fertility-issues" className="block py-2 pl-4 hover:text-teal-200" onClick={() => setIsOpen(false)}>
+
+            <Link 
+              to="/fertility-issues" 
+              className="block py-2 pl-4 hover:text-pink-200 transition"
+              onClick={() => setIsOpen(false)}
+            >
               Fertility Issues
             </Link>
-            <Link to="/general-gynecologic" className="block py-2 pl-4 hover:text-teal-200" onClick={() => setIsOpen(false)}>
+
+            <Link 
+              to="/general-gynecologic" 
+              className="block py-2 pl-4 hover:text-pink-200 transition"
+              onClick={() => setIsOpen(false)}
+            >
               General Gynecologic Queries
             </Link>
           </div>
+
           <a 
             href="https://rootsclinics.com/" 
             target="_blank" 
             rel="noopener noreferrer"
-            className="block py-2 hover:text-teal-200"
+            className="block py-2 hover:text-pink-200 transition"
           >
             Online Consultation
           </a>
-          <Link to="/contact" className="block py-2 hover:text-teal-200" onClick={() => setIsOpen(false)}>
+
+          <Link 
+            to="/contact" 
+            className="block py-2 hover:text-pink-200 transition"
+            onClick={() => setIsOpen(false)}
+          >
             Contact
           </Link>
+
         </div>
       )}
     </nav>

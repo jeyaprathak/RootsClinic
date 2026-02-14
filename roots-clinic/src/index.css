@@ -16,24 +16,27 @@ code {
     monospace;
 }
 
-/* Custom Scrollbar */
+
+/* Scrollbar Width */
 ::-webkit-scrollbar {
   width: 10px;
 }
 
+/* Scrollbar Track */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: #fde8f3; /* very light pink */
 }
 
+/* Scrollbar Thumb */
 ::-webkit-scrollbar-thumb {
-  background: #0d9488;
-  border-radius: 5px;
+  background: #db2777; /* pink-600 */
+  border-radius: 6px;
 }
 
+/* Hover Effect */
 ::-webkit-scrollbar-thumb:hover {
-  background: #0f766e;
+  background: #be185d; /* pink-700 */
 }
-
 /* Smooth scroll */
 html {
   scroll-behavior: smooth;
